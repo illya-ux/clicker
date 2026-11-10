@@ -1,0 +1,22 @@
+<ScreenMenu>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'clicker'
+        Image:
+            source: 
+        Button:
+            text: "play"
+            on_press: root.go_game()
+
+<ScreenGame>:
+    BoxLayout:
+        orientation: 'vertical'
+        spacing: 20
+        padding: 50
+        image: 
+        Label:
+            text: 'clicker'
+        Button:
+            text: "back"
+            on_press: root.back()

@@ -8,16 +8,6 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 class ScreenMenu(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
-        button1 = Button(text="play")
-        label1 = Label(text="clicker")
-        box = BoxLayout(orientation="vertical")
-
-        button1.on_press = self.go_game
-
-        box.add_widget(label1)
-        box.add_widget(button1)
-
-        self.add_widget(box)
 
     def go_game(self):
         self.manager.current = "game"
@@ -26,19 +16,10 @@ class ScreenMenu(Screen):
 class ScreenGame(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
-        button1 = Button(text="back")
-        label1 = Label(text="game start")
-        box = BoxLayout(orientation="vertical")
 
-        button1.on_press = self.back
-        
-        box.add_widget(label1)
-        box.add_widget(button1)
-
-        self.add_widget(box)
 
     def back(self):
-            self.manager.current = "menu"
+        self.manager.current = "menu"
 
 class ClickerApp(App):
     def build(self):
