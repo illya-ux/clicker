@@ -20,9 +20,14 @@ class ScreenMenu(Screen):
 class ScreenGame(Screen):
     def __init__(self, **kw):
         super().__init__(**kw)
+        self.click_count = 0
 
     def back(self):
         self.manager.current = "menu"
+
+    def click(self):
+        self.click_count += 1
+        self.ids.count_click_label.text = str(self.click_count)
 
 
 class ScreenShop(Screen):

@@ -1,3 +1,5 @@
+#:set COLOR_PRIMARY 1, 1, 0.9
+
 <ScreenMenu>:
     BoxLayout:
         canvas:
@@ -14,7 +16,7 @@
             text: 'Побег\n с Селены-4'
             halign: "center"
             font_size: "48sp"
-            color: 1, 1, 0.9
+            color: COLOR_PRIMARY
 
         Button:
             text: "shop"
@@ -61,6 +63,7 @@
                     pos: self.pos
 
             Label:
+                id: count_click_label
                 text: "clicks: 0"
                 font_size: "22sp"
                 color: 0.7, 0.9, 1
@@ -79,6 +82,7 @@
             background_normal: 'assets/luna.png'
             size_hint: 1, 0.5
             pos_hint: {"center_x": 0.5}
+            on_press: root.click()
 
         Widget:
             size_hint_y: 0.1
@@ -96,11 +100,10 @@
 <ScreenShop>:
     BoxLayout:
         canvas.before:
-            Color:
-                rgb: 0.08, 0.1, 0.2
             Rectangle:
                 size: self.size
                 pos: self.pos
+                source: 'assets/game_menu.jpg'
 
         orientation: 'vertical'
         spacing: "20dp"
